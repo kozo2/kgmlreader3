@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>org.cytoscape.archetypes</groupId>
-	<artifactId>task-plugin</artifactId>
+	<artifactId>kgmlreader</artifactId>
 	<packaging>maven-archetype</packaging>
-	<name>Cytoscape 3 Archetype - Cytoscape Task Plugin</name>
+	<name>KGMLReader</name>
 
 	<build>
 		<plugins>
@@ -32,6 +32,31 @@
 				</configuration> </plugin> <plugin> <artifactId>maven-clean-plugin</artifactId> 
 				<version>2.4.1</version> <executions> <execution> <id>auto-clean</id> <phase>initialize</phase> 
 				<goals> <goal>clean</goal> </goals> </execution> </executions> </plugin> -->
+
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.8.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<extention>true</extention>
+							<schemaIncludes>
+								<schemeInclude>*.dtd</schemeInclude>
+							</schemaIncludes>
+							<bindingIncludes>
+								<bindingInclude>*.jaxb</bindingInclude>
+							</bindingIncludes>
+							<generateDirectory>${basedir}/src/main/java</generateDirectory>
+							<generatePackage>org.cytoscape.data.reader.kgml.generated</generatePackage>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
