@@ -10,6 +10,7 @@ import org.cytoscape.view.model.CyNetworkViewFactory;
 import org.cytoscape.view.vizmap.VisualStyle;
 import org.cytoscape.work.AbstractTask;
 import org.cytoscape.work.TaskMonitor;
+import org.cytoscape.data.reader.kgml.generated.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,12 @@ public class KGMLReader extends AbstractTask implements CyNetworkReader {
 	static final String IMAGE = "KEGG.image";
 	static final String LINK = "KEGG.link";
 	static final String TITLE = "KEGG.title";
+	
+	private int[] nodeIdx;
+	private int[] edgeIdx;
+	
+	private String networkName;
+	private Pathway pathway;
 	
 	protected CyNetwork[] cyNetworks;
 	
