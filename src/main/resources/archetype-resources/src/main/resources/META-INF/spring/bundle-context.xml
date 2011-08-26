@@ -17,5 +17,33 @@
 	<bean id="sampleTaskFactory"
 		class="${package}.internal.SampleTaskFactory">
 	</bean>
+	
+	<!-- File Filters -->
+	<bean id="kgmlFilter" class="org.cytoscape.io.BasicCyFileFilter">
+		<constractor-arg index="0">
+			<set>
+				<value>kgml</value>
+			</set>
+		</constractor-arg>
+		<constructor-arg index="1">
+			<set>
+				<value>text/sif</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg value="KGML files" />
+		<constructor-arg type="org.cytoscape.io.DataCategory" value="NETWORK " />
+		<constructor-arg type="org.cytoscape.io.util.StreamUtil">
+			<ref bean="streamUtil" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="kgmlViewReaderFactory" class="org.cytoscape.io.kegg.KGMLReaderFactory">
+		<constructor-arg ref="kgmlFilter" />
+		<constructor-arg ref="cyNetworkViewFactoryServiceRef" />
+		<constructor-arg ref="cyNetworkFactoryServiceRef" />
+		<constructor-arg ref="cyEventHelperRef" />
+	</bean>
+
+	<!-- Network Writers -->
 
 </beans>
