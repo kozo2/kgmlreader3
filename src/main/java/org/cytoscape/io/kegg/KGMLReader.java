@@ -1,4 +1,4 @@
-package org.cytoscape.io.internal.read.kgml;
+package org.cytoscape.io.kegg;
 
 import java.io.InputStream;
 
@@ -11,9 +11,21 @@ import org.cytoscape.view.vizmap.VisualStyle;
 import org.cytoscape.work.AbstractTask;
 import org.cytoscape.work.TaskMonitor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class KGMLReader extends AbstractTask implements CyNetworkReader {
-
+	private static final Logger logger = LoggerFactory.getLogger(KGMLReader.class);
+	
+	static final String NETWORK_TYPE = "network type";
+	static final String NETWORK_TYPE_VALUE = "KEGG Pathway";
+	static final String SPECIES = "KEGG.org";
+	static final String NUMBER = "KEGG.number";
+	static final String IMAGE = "KEGG.image";
+	static final String LINK = "KEGG.link";
+	static final String TITLE = "KEGG.title";
+	
 	protected CyNetwork[] cyNetworks;
 	
 	protected VisualStyle[] visualstyles;

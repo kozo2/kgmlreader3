@@ -1,3 +1,4 @@
 .svn/
+target/
 src/main/java/org/cytoscape/data/reader/kgml/generated/
 src/main/java/META-INF/
