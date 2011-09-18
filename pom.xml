@@ -1,24 +1,26 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<parent>
-		<groupId>org.cytoscape</groupId>
-		<artifactId>impl-parent</artifactId>
-		<version>3.0.0-alpha6-SNAPSHOT</version>
-	</parent>
-	
-	<properties>
-		<bundle.symbolicName>org.cytoscape.kegg.kgmlreader</bundle.symbolicName>
-		<bundle.namespace>org.cytoscape.kegg</bundle.namespace>
-	</properties>
+	    <groupId>org.cytoscape</groupId>
+	    <artifactId>parent</artifactId>
+	    <version>3.0.0-alpha8</version>
+	    <relativePath>../parent</relativePath>
+  	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.cytoscape.kegg</groupId>
 	<artifactId>kgmlreader</artifactId>
+	
+	<properties>
+		<bundle.symbolicName>org.cytoscape.kegg.kgmlreader</bundle.symbolicName>
+		<bundle.namespace>org.cytoscape.kegg</bundle.namespace>
+		<cytoscape.api.version>3.0.0-alpha7</cytoscape.api.version>
+	</properties>
 
 	<name>${bundle.symbolicName} [${bundle.namespace}]</name>
 
-	<packaging>bundle</packaging>
+	<packaging>pom</packaging>
 
 	<repositories>
 		<!-- bootstrap for cytoscape dependencies, namely the parent POM snapshots -->
@@ -105,10 +107,6 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>org.cytoscape</groupId>
-			<artifactId>di-util-api</artifactId>
-		</dependency>	
-		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
@@ -116,31 +114,51 @@
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
+			<artifactId>di-util-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.cytoscape</groupId>
 			<artifactId>equations-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>			
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>io-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>presentation-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>layout-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>model-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>core-task-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.cytoscape</groupId>
 			<artifactId>property-api</artifactId>
+			<version>${cytoscape.api.version}</version>
+			<classifier>javadoc</classifier>
 		</dependency>
 	</dependencies>
 </project>
